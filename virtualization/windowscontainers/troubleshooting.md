@@ -94,3 +94,15 @@ Get-WinEvent -LogName Microsoft-Windows-Hyper-V-Compute-Admin
 Get-WinEvent -LogName Microsoft-Windows-Hyper-V-Compute-Operational 
 ```
 
+### Verifying Host Kernel Version
+Older Kernel is not supported to run Docker engine.  Following command will give you the kernel build of Windows host.
+```
+$(Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion' BuildLabEx).BuildLabEx
+```
+Below is the example from Octorber 2017 update.
+```
+14393.1480.amd64fre.rs1_release.170706-2004
+```
+
+
+
